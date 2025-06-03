@@ -1,66 +1,209 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Elearning Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Une plateforme d’e-learning intelligente construite avec Laravel 11. Elle permet aux étudiants d’apprendre à leur rythme, aux enseignants de gérer leurs cours, et aux administrateurs de superviser l’ensemble. Le système inclut un tableau de bord personnalisé selon le rôle et des fonctionnalités interactives comme les quiz, devoirs et certificats.
 
-## About Laravel
+> 🚧 **Projet développé conjointement par [@sayouba2](https://github.com/sayouba2) et [@HichamOuteha)](https://github.com/HichamOuteha)**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Fonctionnalités principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Rôles multiples** : Étudiants, enseignants, administrateurs avec des dashboards dédiés.
+* **Création et gestion de cours et de leçons** : Par les enseignants.
+* **Inscription et suivi de progression** : Pour les étudiants.
+* **Système de quiz et devoirs** : Évaluation des connaissances.
+* **Certificats** : Génération automatique après réussite.
+* **Tableaux de bord analytiques** : Statistiques par rôle (revenus, inscriptions, performance...).
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🧰 Prérequis
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* PHP >= 8.1
+* Composer
+* Node.js & npm
+* MySQL 5
+* Laravel 11
+* XAMPP
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ⚙️ Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Cloner le dépôt**
 
-### Premium Partners
+   ```bash
+   git clone https://github.com/sayouba2/smart_learning.git
+   cd smart_learning
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. **Installer les dépendances PHP**
 
-## Contributing
+   ```bash
+   composer install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. **Installer les dépendances JavaScript**
 
-## Code of Conduct
+   ```bash
+   npm install
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. **Copier le fichier `.env`**
 
-## Security Vulnerabilities
+   ```bash
+   cp .env.example .env
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. **Configurer l’environnement `.env`**
 
-## License
+   ```env
+   APP_NAME="Smart Learning"
+   APP_URL=http://localhost:8000
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=laravel
+   DB_USERNAME=root
+   DB_PASSWORD=
+
+   OPENAI_API_KEY=your_api_key
+   PAYPAL_CLIENT_ID=your_paypal_id
+   ```
+
+6. **Générer la clé de l’application**
+
+   ```bash
+   php artisan key:generate
+   ```
+
+7. **Lancer les migrations**
+
+   ```bash
+   php artisan migrate --seed
+   ```
+
+8. **Compiler les assets**
+
+   ```bash
+   npm run dev
+   ```
+
+9. **Démarrer le serveur**
+
+   ```bash
+   php artisan serve
+   ```
+
+---
+
+## 🔒 Authentification et rôles
+
+Le système utilise Laravel Breeze avec des redirections conditionnelles selon le rôle :
+
+* `/admin/dashboard`
+* `/teacher/dashboard`
+* `/student/dashboard`
+
+Les rôles sont attribués lors de l’inscription.
+
+---
+
+## 📁 Structure du projet
+
+```
+smart-learning/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Auth/
+│   │   ├── Admin/
+│   │   ├── Teacher/
+│   │   ├── Student/
+│   │   └── ContactController.php, AboutController.php, StudentController.php ...
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Course.php
+│   │   ├── Enrollment.php
+│   │   ├── Quiz.php
+│   │   └── Certificate.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── views/
+│   └── js/
+├── routes/
+│   ├── web.php
+│   └── admin.php, teacher.php, student.php
+├── public/
+├── .env
+├── composer.json
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## 📊 Graphiques dynamiques
+
+Utilisation de `Chart.js` pour afficher :
+
+* Cours les plus populaires
+* Inscriptions par mois
+* Revenus par catégorie
+* Progression des étudiants
+
+---
+
+## ✅ Tests
+
+```bash
+php artisan test
+```
+
+---
+
+## 🤝 Contribution
+
+1. Fork du projet.
+
+2. Créer une branche :
+
+   ```bash
+   git checkout -b feature/ma-fonctionnalite
+   ```
+
+3. Commit :
+
+   ```bash
+   git commit -m "Ajout d’une fonctionnalité"
+   ```
+
+4. Push :
+
+   ```bash
+   git push origin feature/ma-fonctionnalite
+   ```
+
+5. Pull request vers `main`.
+
+---
+
+## 📄 Licence
+
+Projet open source sous licence [MIT](LICENSE).
+
+---
+
+## 🙏 Remerciements
+
+* Laravel pour le framework
+* Tailwind CSS, Chart.js, Jetstream/Breeze
+
+---
+
+## 📬 Support
+
+Pour toute question ou bug, merci d’ouvrir une [issue GitHub](https://github.com/sayouba2/smart_learning/issues).
+
